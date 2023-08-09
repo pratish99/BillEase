@@ -1,6 +1,14 @@
 package com.billease.server.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity //Making invoice as an entity for database with the help of hibernate
 public class Invoice {
+    @Id //setting id as a primary key
+    @GeneratedValue(strategy = GenerationType.AUTO) // For automatic generation of id
     private long id;
     private String vendor;
     private String product;
