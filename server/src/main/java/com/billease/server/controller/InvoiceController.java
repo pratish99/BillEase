@@ -2,10 +2,9 @@ package com.billease.server.controller;
 import com.billease.server.model.Invoice;
 import com.billease.server.services.InvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController // To Specify it as a controller
 @CrossOrigin //To handle CORS error as frontend and backend are running on different servers
@@ -17,6 +16,11 @@ public class InvoiceController {
     @PostMapping("/invoice") // To map post request
     public Invoice addInvoice(@RequestBody Invoice invoice){ //Takes payload object as arg
         return this.invoiceService.addInvoice(invoice);
+    }
+
+    @GetMapping("/invoice")
+    public List<Invoice> getInvoice() {
+        return this.invoiceService.getInvoices();
     }
 }
 
