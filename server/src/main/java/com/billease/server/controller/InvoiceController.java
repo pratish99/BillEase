@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController // To Specify it as a controller
-@CrossOrigin
+@CrossOrigin //To handle CORS error as frontend and backend are running on different servers
 public class InvoiceController {
 
     @Autowired //Object of interface cannot be made so we are using this
